@@ -3,9 +3,9 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://gitlab.com/OrangeFox/Manifest.git"
-DEVICE=land
-DT_LINK="https://github.com/MarvelMathesh/omni_device_xiaomi_land"
-DT_PATH=device/xiaomi/$DEVICE
+DEVICE=E
+DT_LINK="https://github.com/MarvelMathesh/omni_device_xiaomi_land -b test"
+DT_PATH=device/10or/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
 apt install openssh-server -y
