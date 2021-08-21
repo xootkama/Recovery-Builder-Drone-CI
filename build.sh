@@ -4,7 +4,8 @@
 
 MANIFEST="https://gitlab.com/OrangeFox/Manifest.git"
 DEVICE=mido
-DT_LINK="https://github.com/shashank1436/recovery_device_xiaomi_mido -b android-9.0"
+BRANCH=android-9.0
+DT_LINK="https://github.com/AnGgIt88/recovery_device_xiaomi_mido -b $BRANCH"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
