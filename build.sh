@@ -5,7 +5,7 @@
 MANIFEST="https://gitlab.com/OrangeFox/Manifest.git"
 DEVICE=rosy
 BRANCH=android-9.0
-DT_LINK="https://github.com/AnGgIt88/recovery_device_xiaomi_mido -b $BRANCH"
+DT_LINK="https://github.com/AnGgIt88/ofx_recovery_xiaomi_rosy -b $BRANCH"
 DT_PATH=device/xiaomi/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
