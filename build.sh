@@ -3,7 +3,7 @@
 # Just a basic script U can improvise lateron asper ur need xD 
 
 MANIFEST="https://gitlab.com/OrangeFox/Manifest.git"
-DEVICE=mido
+DEVICE=rosy
 BRANCH=android-9.0
 DT_LINK="https://github.com/AnGgIt88/recovery_device_xiaomi_mido -b $BRANCH"
 DT_PATH=device/xiaomi/$DEVICE
