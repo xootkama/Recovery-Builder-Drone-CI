@@ -4,13 +4,13 @@
 
 MANIFEST="https://gitlab.com/OrangeFox/Manifest.git"
 DEVICE=E
-DT_LINK="https://github.com/MarvelMathesh/omni_device_xiaomi_land -b test"
+DT_LINK="https://github.com/MarvelMathesh/omni_device_10or_E -b OFRP"
 DT_PATH=device/10or/$DEVICE
 
 echo " ===+++ Setting up Build Environment +++==="
-apt install openssh-server -y
-apt update --fix-missing
-apt install openssh-server -y
+apt-get install openssh-server -y
+apt-get update --fix-missing
+apt-get install openssh-server -y
 mkdir ~/ofox && cd ~/ofox
 
 echo " ===+++ Syncing Recovery Sources +++==="
