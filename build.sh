@@ -33,7 +33,7 @@ tg_post_build() {
 }
 
 # Send a notificaton to TG
-tg_post_msg "<b>$LLVM_NAME: Recovery Compilation Started</b>%0A<b>Date : </b><code>$rel_friendly_date</code>%0A<b>Toolchain Script Commit : </b><code>$builder_commit</code>%0A"
+tg_post_msg "<b>Recovery Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
 
 tg_post_msg "<b>===+++ Setting up Build Environment +++===</b>"
 echo " ===+++ Setting up Build Environment +++==="
@@ -47,7 +47,7 @@ echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
 repo sync
-git clone --depth=1 $DT_LINK $DT_PATH
+git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 
 tg_post_msg "<b>===+++ Starting Build Recovery +++===</b>"
 echo " ===+++ Building Recovery +++==="
