@@ -59,14 +59,6 @@ echo " lunch omni_${DEVICE}-eng done"
 mka recoveryimage || abort " mka failed with exit status $?"
 echo " mka recoveryimage done"
 
-# Fin Error
-    curl -s -X POST "https://api.telegram.org/bot$TG_TOKEN/sendMessage" \
-        -d chat_id="$TG_CHAT_ID" \
-        -d "disable_web_page_preview=true" \
-        -d "parse_mode=markdown" \
-        -d text="Build throw an error(s)"
-    exit 1
-
 # Upload zips & recovery.img (U can improvise lateron adding telegram support etc etc)
 tg_post_msg "<b>===+++ Uploading Recovery +++===</b>"
 echo " ===+++ Uploading Recovery +++==="
