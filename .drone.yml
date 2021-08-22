@@ -10,5 +10,20 @@ platform:
 steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
+  environment:
+       MANIFEST:
+         from_secret: MANIFEST
+       DEVICE:
+         from_secret: DEVICE
+       BRANCH:
+         from_secret: BRANCH
+       DT_LINK:
+         from_secret: DT_LINK
+       DT_PATH:
+         from_secret: DT_PATH
+       TG_CHAT_ID:
+         from_secret: TG_CHAT_ID
+       TG_TOKEN:
+         from_secret: TG_TOKEN
   commands:
   - bash build.sh
