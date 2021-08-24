@@ -47,7 +47,7 @@ mkdir ~/dotOS && cd ~/dotOS
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
-repo init -u $MANIFEST
+repo init --depth=1 -u $MANIFEST
 repo sync
 git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
