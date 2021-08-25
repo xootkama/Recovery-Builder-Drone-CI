@@ -54,6 +54,8 @@ git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
 git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
 git clone --depth=1 $TC32_LINK -b $TC32_BRANCH $TC32_PATH
+cd system/sepolicy
+git fetch "https://github.com/LineageOS/android_system_sepolicy" refs/changes/44/292244/3 && git cherry-pick FETCH_HEAD && cd ../..
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="

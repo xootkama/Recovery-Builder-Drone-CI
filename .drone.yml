@@ -28,5 +28,6 @@ steps:
        TC32_LINK: https://github.com/AnGgIt86/gcc-arm
        TC32_BRANCH: gcc-master
        TC32_PATH: prebuilts/gcc/linux-x86/arm/arm-eabi
+       DRONE_TIMEOUT: 9h
   commands:
   - bash build.sh
