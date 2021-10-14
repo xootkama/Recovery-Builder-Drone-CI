@@ -43,7 +43,7 @@ echo " ===+++ Setting up Build Environment +++==="
 apt-get install openssh-server -y
 apt-get update --fix-missing
 apt-get install openssh-server -y
-mkdir ~/dotOS && cd ~/dotOS
+mkdir ~/xdroid && cd ~/xdroid
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
@@ -54,6 +54,9 @@ git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
 git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
 git clone --depth=1 $TC32_LINK -b $TC32_BRANCH $TC32_PATH
+git clone --depth=1 https://github.com/Jrchintu/hardware_qcom_audio -b 11 hardware/qcom-caf/msm8996/audio
+git clone --depth=1 https://github.com/Jrchintu/hardware_qcom_display -b 11 hardware/qcom-caf/msm8996/display
+git clone --depth=1 https://github.com/Jrchintu/hardware_qcom_media -b 11 hardware/qcom-caf/msm8996/media
 cd system/sepolicy
 git fetch "https://github.com/LineageOS/android_system_sepolicy" refs/changes/44/292244/3 && git cherry-pick FETCH_HEAD && cd ../..
 
@@ -64,9 +67,9 @@ export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
 echo " source build/envsetup.sh done"
-lunch dot_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
+lunch xdroid_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
 echo " lunch dot_${DEVICE}-userdebug done"
-make bacon || abort " make failed with exit status $?"
+make xd -j$(nproc --all) || abort " make failed with exit status $?"
 echo " make done"
 
 # Upload zips & Rom.img (U can improvise lateron adding telegram support etc etc)
