@@ -1,8 +1,5 @@
 #!/bin/bash
 
-export TG_CHAT_ID=-1001580307414
-export TG_TOKEN=1852697615:AAGKDF9cYNnTY4Ylm7XjBrsssS31eTtqYfk
-
 # Just a basic script U can improvise lateron asper ur need xD 
 
 # Function to show an informational message
@@ -40,9 +37,6 @@ tg_post_msg "<b>Rom Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code
 
 tg_post_msg "<b>===+++ Setting up Build Environment +++===</b>"
 echo " ===+++ Setting up Build Environment +++==="
-apt-get install openssh-server -y
-apt-get update --fix-missing
-apt-get install openssh-server -y
 mkdir ~/xdroid && cd ~/xdroid
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
@@ -52,8 +46,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
-git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
-git clone --depth=1 $TC32_LINK -b $TC32_BRANCH $TC32_PATH
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
