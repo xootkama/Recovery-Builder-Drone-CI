@@ -8,6 +8,11 @@ platform:
   os: linux
 
 steps:
+- name: Setup
+  image: brock5555/recovery
+  commands:
+  - bash setup.sh
+
 - name: Start syncing && Compiling
   image: brock5555/recovery
   environment:
