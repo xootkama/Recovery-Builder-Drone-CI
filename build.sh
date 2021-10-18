@@ -38,6 +38,11 @@ tg_post_msg "<b>Rom Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code
 tg_post_msg "<b>===+++ Setting up Build Environment +++===</b>"
 echo " ===+++ Setting up Build Environment +++==="
 mkdir ~/xdroid && cd ~/xdroid
+git config --global user.email jarbull87@gmail.com
+git config --global user.name AnGgIt88
+apt-get install openssh-server -y
+apt-get update --fix-missing
+apt-get install openssh-server -y
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
