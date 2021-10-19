@@ -51,6 +51,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
+git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
@@ -59,9 +60,9 @@ export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
 echo " source build/envsetup.sh done"
-lunch xdroid_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
+lunch paladium_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
 echo " lunch dot_${DEVICE}-userdebug done"
-make xd -j$(nproc --all) || abort " make failed with exit status $?"
+mka palladium -j$(nproc --all) || abort " make failed with exit status $?"
 echo " make done"
 
 # Upload zips & Rom.img (U can improvise lateron adding telegram support etc etc)

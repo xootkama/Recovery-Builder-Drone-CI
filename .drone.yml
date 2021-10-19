@@ -11,10 +11,10 @@ steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
   environment:
-       MANIFEST: https://github.com/xdroid-CAF/xd_manifest -b eleven
+       MANIFEST: https://github.com/Palladium-OS/platform_manifest.git -b 11
        DEVICE: rosy
        BRANCH: eleven
-       DT_LINK: https://github.com/AnGgIt88/xd_device_xiaomi_rosy
+       DT_LINK: https://github.com/AnGgIt88/device_xiaomi_rosy
        DT_PATH: device/xiaomi/rosy
        VT_LINK: https://github.com/AnGgIt88/xd_vendor_xiaomi_rosy
        VT_BRANCH: eleven
@@ -22,12 +22,8 @@ steps:
        KT_LINK: https://github.com/AnGgIt88/Finix_kernel-4.9-rosy
        KT_BRANCH: eleven
        KT_PATH: kernel/xiaomi/rosy
-       TC_LINK: https://github.com/AnGgIt86/arm64-gcc
-       TC_BRANCH: gcc-master
-       TC_PATH: prebuilts/gcc/linux-x86/aarch64/aarch64-elf
-       TC32_LINK: https://github.com/AnGgIt86/gcc-arm
-       TC32_BRANCH: gcc-master
-       TC32_PATH: prebuilts/gcc/linux-x86/arm/arm-eabi
-       DRONE_TIMEOUT: 9h
+       TC_LINK: https://github.com/AnGgIt86/Finix-Clang
+       TC_BRANCH: master
+       TC_PATH: prebuilts/clang/host/linux-x86/clang-Finix
   commands:
   - bash build.sh
