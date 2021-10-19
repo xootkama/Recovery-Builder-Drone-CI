@@ -13,7 +13,7 @@ steps:
   environment:
        MANIFEST: https://github.com/Palladium-OS/platform_manifest.git -b 11
        DEVICE: rosy
-       BRANCH: eleven
+       BRANCH: 11
        DT_LINK: https://github.com/AnGgIt88/device_xiaomi_rosy
        DT_PATH: device/xiaomi/rosy
        VT_LINK: https://github.com/AnGgIt88/xd_vendor_xiaomi_rosy
