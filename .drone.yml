@@ -22,7 +22,7 @@ steps:
        KT_LINK: https://github.com/AnGgIt88/Finix_kernel-4.9-rosy
        KT_BRANCH: eleven
        KT_PATH: kernel/xiaomi/rosy
-       TC_LINK: https://github.com/AnGgIt86/Finix-Clang
+       TC_LINK: https://github.com/AnGgIt88/Finix-Clang
        TC_BRANCH: master
        TC_PATH: prebuilts/clang/host/linux-x86/clang-Finix
   commands:
