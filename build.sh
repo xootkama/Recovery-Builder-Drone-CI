@@ -47,7 +47,7 @@ apt-get install openssh-server -y
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
 repo init --depth=1 -u $MANIFEST
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c -q --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
