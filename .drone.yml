@@ -22,8 +22,11 @@ steps:
        KT_LINK: https://github.com/AnGgIt88/Finix_kernel-4.9-rosy
        KT_BRANCH: eleven
        KT_PATH: kernel/xiaomi/rosy
-       TC_LINK: https://github.com/AnGgIt88/Finix-Clang
-       TC_BRANCH: master
-       TC_PATH: prebuilts/clang/host/linux-x86/clang-Finix
+       TC_LINK: https://github.com/AnGgIt86/arm64-gcc
+       TC_BRANCH: gcc-master
+       TC_PATH: prebuilts/gcc/linux-x86/aarch64/aarch64-elf
+       TC32_LINK: https://github.com/AnGgIt86/gcc-arm
+       TC32_BRANCH: gcc-master
+       TC32_PATH: prebuilts/gcc/linux-x86/arm/arm-eabi
   commands:
   - bash build.sh
