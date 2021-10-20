@@ -52,6 +52,7 @@ git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
 git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
 git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
+git clone --depth=1 $TC32_LINK -b $TC32_BRANCH $TC32_PATH
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
