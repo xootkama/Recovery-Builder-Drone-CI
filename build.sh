@@ -60,7 +60,7 @@ export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
 echo " source build/envsetup.sh done"
-lunch paladium_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
+lunch palladium_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
 echo " lunch dot_${DEVICE}-userdebug done"
 mka palladium -j$(nproc --all) || abort " make failed with exit status $?"
 echo " make done"
