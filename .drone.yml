@@ -11,13 +11,13 @@ steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
   environment:
-       MANIFEST: https://github.com/Palladium-OS/platform_manifest.git -b 11
+       MANIFEST: git://github.com/AnGgIt88/manifest.git -b 11
        DEVICE: rosy
-       BRANCH: 11
+       BRANCH: derpfest-eleven
        DT_LINK: https://github.com/AnGgIt88/device_xiaomi_rosy
        DT_PATH: device/xiaomi/rosy
        VT_LINK: https://github.com/AnGgIt88/xd_vendor_xiaomi_rosy
-       VT_BRANCH: eleven
+       VT_BRANCH: aosp
        VT_PATH: vendor/xiaomi/rosy
        KT_LINK: https://github.com/AnGgIt88/Finix_kernel-4.9-rosy
        KT_BRANCH: eleven
