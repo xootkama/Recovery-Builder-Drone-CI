@@ -46,13 +46,9 @@ apt-get install openssh-server -y
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
-repo init --depth=1 -u $MANIFEST
-repo sync -c -q --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
-git clone --depth=1 $VT_LINK -b $VT_BRANCH $VT_PATH
-git clone --depth=1 $KT_LINK -b $KT_BRANCH $KT_PATH
-git clone --depth=1 $TC_LINK -b $TC_BRANCH $TC_PATH
-git clone --depth=1 $TC32_LINK -b $TC32_BRANCH $TC32_PATH
+repo init --depth=1 --no-repo-verify -u $MANIFEST -g default,-mips,-darwin,-notdefault
+git clone https://github.com/AnGgIt88/local_manifest.git --depth 1 -b derpfest-eleven .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
@@ -60,11 +56,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
-echo " source build/envsetup.sh done"
-lunch palladium_${DEVICE}-userdebug || abort " lunch failed with exit status $?"
-echo " lunch dot_${DEVICE}-userdebug done"
-mka palladium -j$(nproc --all) || abort " make failed with exit status $?"
-echo " make done"
+lunch derp_${DEVICE}-user || abort " lunch failed with exit status $?"
+mka derp -j$(nproc --all) || abort " make failed with exit status $?"
 
 # Upload zips & Rom.img (U can improvise lateron adding telegram support etc etc)
 tg_post_msg "<b>===+++ Uploading Rom +++===</b>"
