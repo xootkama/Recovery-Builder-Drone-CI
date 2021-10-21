@@ -11,7 +11,7 @@ steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
   environment:
-       MANIFEST: git://github.com/AnGgIt88/manifest.git -b 11
+       MANIFEST: git://github.com/DerpFest-11/manifest.git -b 11
        DEVICE: rosy
        BRANCH: derpfest-eleven
        DT_LINK: https://github.com/AnGgIt88/device_xiaomi_rosy
