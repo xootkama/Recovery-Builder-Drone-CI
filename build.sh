@@ -46,9 +46,9 @@ apt-get install openssh-server -y
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
-repo init --depth=1 --no-repo-verify -u $MANIFEST -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u $MANIFEST
 git clone https://github.com/AnGgIt88/local_manifest.git --depth 1 -b derpfest-eleven .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
