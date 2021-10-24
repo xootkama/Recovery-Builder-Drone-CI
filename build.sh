@@ -46,9 +46,9 @@ apt-get install openssh-server -y
 
 tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
-repo init --depth=1 -u $MANIFEST
-git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b derpfest-eleven .repo/local_manifests
-repo sync
+repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
+git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
 echo " ===+++ Building Rom +++==="
@@ -56,8 +56,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
-lunch derp_${DEVICE}-user || abort " lunch failed with exit status $?"
-mka derp -j$(nproc --all) || abort " make failed with exit status $?"
+lunch xdroid_rosy-userdebug
+mmma /device/xiaomi/rosy/XiaomiParts
 
 # Upload zips & Rom.img (U can improvise lateron adding telegram support etc etc)
 tg_post_msg "<b>===+++ Uploading Rom +++===</b>"

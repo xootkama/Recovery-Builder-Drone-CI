@@ -10,23 +10,5 @@ platform:
 steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
-  environment:
-       MANIFEST: git://github.com/DerpFest-11/manifest.git -b 11
-       DEVICE: rosy
-       BRANCH: derpfest-eleven
-       DT_LINK: https://github.com/AnGgIt88/device_xiaomi_rosy
-       DT_PATH: device/xiaomi/rosy
-       VT_LINK: https://github.com/AnGgIt88/xd_vendor_xiaomi_rosy
-       VT_BRANCH: aosp
-       VT_PATH: vendor/xiaomi/rosy
-       KT_LINK: https://github.com/AnGgIt88/Finix_kernel-4.9-rosy
-       KT_BRANCH: eleven
-       KT_PATH: kernel/xiaomi/rosy
-       TC_LINK: https://github.com/AnGgIt86/arm64-gcc
-       TC_BRANCH: gcc-master
-       TC_PATH: prebuilts/gcc/linux-x86/aarch64/aarch64-elf
-       TC32_LINK: https://github.com/AnGgIt86/gcc-arm
-       TC32_BRANCH: gcc-master
-       TC32_PATH: prebuilts/gcc/linux-x86/arm/arm-eabi
   commands:
   - bash build.sh
