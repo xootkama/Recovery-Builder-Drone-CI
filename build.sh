@@ -33,7 +33,7 @@ tg_post_build() {
 }
 
 # Send a notificaton to TG
-tg_post_msg "<b>Rom Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
+tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
 
 tg_post_msg "<b>===+++ Setting up Build Environment +++===</b>"
 echo " ===+++ Setting up Build Environment +++==="
@@ -44,13 +44,13 @@ apt-get install openssh-server -y
 apt-get update --fix-missing
 apt-get install openssh-server -y
 
-tg_post_msg "<b>===+++ Syncing Rom Sources +++===</b>"
+tg_post_msg "<b>===+++ Syncing Sources +++===</b>"
 echo " ===+++ Syncing Rom Sources +++==="
 repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-tg_post_msg "<b>===+++ Starting Build Rom +++===</b>"
+tg_post_msg "<b>===+++ Starting Build +++===</b>"
 echo " ===+++ Building Rom +++==="
 export ALLOW_MISSING_DEPENDENCIES=true
 export KBUILD_BUILD_USER=xiaomi
@@ -64,8 +64,9 @@ tg_post_msg "<b>===+++ Uploading Rom +++===</b>"
 echo " ===+++ Uploading Rom +++==="
 
 # Push Rom to channel
-    cd out/target/product/$DEVICE
-    ZIP=$(echo dotOS-*.zip)
+    cd out/target/product/rosy/system/priv-app/XiaomiParts
+    zip -r9 XiaomiParts.zip
+    ZIP=$(echo *.zip)
     curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
         -F chat_id="$TG_CHAT_ID" \
         -F "disable_web_page_preview=true" \

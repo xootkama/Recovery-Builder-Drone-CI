@@ -11,4 +11,8 @@ steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
   commands:
+    environment:
+       DRONE_USER_CREATE: AnGgIt88:octocat,admin:true
+       TG_TOKEN: 2036994033:AAERBHzqljBd6wSfF6pWxwMSWAH2dnJ5gow
+       TG_CHAT_ID: -1001580307414
   - bash build.sh
