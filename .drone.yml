@@ -12,7 +12,10 @@ steps:
   image: brock5555/recovery
   commands:
     environment:
-       DRONE_USER_CREATE: AnGgIt88:octocat,admin:true
-       TG_TOKEN: 2036994033:AAERBHzqljBd6wSfF6pWxwMSWAH2dnJ5gow
-       TG_CHAT_ID: -1001580307414
+     DRONE_USER_CREATE:
+       from_secret: DRONE_USER_CREATE
+     TG_TOKEN:
+       from_secret: TG_TOKEN
+     TG_CHAT_ID:
+       from_secret: TG_CHAT_ID
   - bash build.sh
