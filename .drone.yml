@@ -10,7 +10,6 @@ platform:
 steps:
 - name: Start syncing && Compiling
   image: brock5555/recovery
-  commands:
     environment:
      DRONE_USER_CREATE:
        from_secret: DRONE_USER_CREATE
@@ -18,4 +17,5 @@ steps:
        from_secret: TG_TOKEN
      TG_CHAT_ID:
        from_secret: TG_CHAT_ID
+  commands:
   - bash build.sh
