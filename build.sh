@@ -56,16 +56,15 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export KBUILD_BUILD_USER=xiaomi
 export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
-lunch xdroid_rosy-userdebug
 mmma /device/xiaomi/rosy/XiaomiParts
 
 # Upload zips & Rom.img (U can improvise lateron adding telegram support etc etc)
-tg_post_msg "<b>===+++ Uploading Rom +++===</b>"
-echo " ===+++ Uploading Rom +++==="
+tg_post_msg "<b>===+++ Uploading +++===</b>"
+echo " ===+++ Uploading +++==="
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts
-    zip -r9 XiaomiParts.zip
+    zip -r9 XiaomiParts.zip *
     ZIP=$(echo *.zip)
     curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
         -F chat_id="$TG_CHAT_ID" \
