@@ -34,23 +34,15 @@ tg_post_build() {
 
 # Send a notificaton to TG
 tg_post_msg "<b>Recovery Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
-
-tg_post_msg "<b>===+++ Setting up Build Environment +++===</b>"
-echo " ===+++ Setting up Build Environment +++==="
 apt-get install openssh-server -y
 apt-get update --fix-missing
-apt-get install openssh-server -y
 mkdir ~/ofox && cd ~/ofox
 
-tg_post_msg "<b>===+++ Syncing Recovery Sources +++===</b>"
-echo " ===+++ Syncing Recovery Sources +++==="
 repo init --depth=1 -u $MANIFEST
 repo sync
 repo sync
 git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
 
-tg_post_msg "<b>===+++ Starting Build Recovery +++===</b>"
-echo " ===+++ Building Recovery +++==="
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 echo " source build/envsetup.sh done"
