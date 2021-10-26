@@ -37,18 +37,14 @@ tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DAT
 mkdir ~/xdroid && cd ~/xdroid
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
-apt-get install openssh-server -y
 apt-get update --fix-missing
-apt-get install openssh-server -y
+apt-get -y update && apt-get -y upgrade
 
 repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 export ALLOW_MISSING_DEPENDENCIES=true
-export KBUILD_BUILD_USER=xiaomi
-export KBUILD_BUILD_HOST=Finix-server
 . build/envsetup.sh
-lunch xdroid_rosy-userdebug
 mmma /device/xiaomi/rosy/XiaomiParts
 
 # Push Rom to channel
