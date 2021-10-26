@@ -38,7 +38,7 @@ export KBUILD_BUILD_HOST=Finix-server
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch xdroid_rosy-userdebug
-mmma /device/xiaomi/rosy/XiaomiParts
+make xd
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts
