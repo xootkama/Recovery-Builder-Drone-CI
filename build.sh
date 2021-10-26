@@ -39,10 +39,11 @@ git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 apt-get update --fix-missing
 apt-get -y update && apt-get -y upgrade
+apt-get install openssh-server -y
 
 repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 mmma /device/xiaomi/rosy/XiaomiParts
