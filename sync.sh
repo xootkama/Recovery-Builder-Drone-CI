@@ -32,19 +32,12 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-cd ~/Projects
-export KBUILD_BUILD_USER=xiaomi
-export KBUILD_BUILD_HOST=Finix-server
-export ALLOW_MISSING_DEPENDENCIES=true
-. build/envsetup.sh
-lunch xdroid_rosy-userdebug
-mmma /device/xiaomi/rosy/XiaomiParts
+# Send a notificaton to TG
+tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
+mkdir ~/Projects && cd ~/Projects
+git config --global user.email jarbull87@gmail.com
+git config --global user.name AnGgIt88
 
-# Push Rom to channel
-    cd out/target/product/rosy/system/priv-app/XiaomiParts
-    zip -r9 XiaomiParts.zip *
-    ZIP=$(echo *.zip)
-    curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
-        -F chat_id="$TG_CHAT_ID" \
-        -F "disable_web_page_preview=true" \
-        -F "parse_mode=html" 
+repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
+git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)

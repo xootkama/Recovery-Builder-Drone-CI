@@ -8,11 +8,27 @@ platform:
   os: linux
 
 steps:
-- name: Start syncing && Compiling
+- name: Linux setup dependency..
   image: xyzuan/xdocker:latest
   environment:
-    DRONE_USER_CREATE:
-      from_secret: DRONE_USER_CREATE
+    TG_TOKEN:
+      from_secret: TG_TOKEN
+    TG_CHAT_ID:
+      from_secret: TG_CHAT_ID
+  commands:
+  - bash setup.sh
+- name: Start syncing..
+  image: xyzuan/xdocker:latest
+  environment:
+    TG_TOKEN:
+      from_secret: TG_TOKEN
+    TG_CHAT_ID:
+      from_secret: TG_CHAT_ID
+  commands:
+  - bash sync.sh
+- name: Start Compiling..
+  image: xyzuan/xdocker:latest
+  environment:
     TG_TOKEN:
       from_secret: TG_TOKEN
     TG_CHAT_ID:
