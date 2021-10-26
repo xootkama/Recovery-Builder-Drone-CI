@@ -34,15 +34,15 @@ tg_post_build() {
 
 # Send a notificaton to TG
 tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
-mkdir ~/xdroid && cd ~/xdroid
+mkdir ~/Projects && cd ~/Projects
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
-apt-get update --fix-missing
 apt-get -y update && apt-get -y upgrade
 apt-get install openssh-server -y
+apt-get update --fix-missing
 
-repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
-git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+git clone https://github.com/AnGgIt88/xd_device_xiaomi_rosy --depth=1 -b eleven device/xiaomi/rosy
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
