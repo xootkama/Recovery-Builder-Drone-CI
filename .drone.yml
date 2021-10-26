@@ -8,7 +8,7 @@ platform:
   os: linux
 
 steps:
-- name: Linux setup dependency..
+- name: Ndase Mumet
   image: xyzuan/xdocker:latest
   environment:
     TG_TOKEN:
@@ -17,21 +17,5 @@ steps:
       from_secret: TG_CHAT_ID
   commands:
   - bash setup.sh
-- name: Start syncing..
-  image: xyzuan/xdocker:latest
-  environment:
-    TG_TOKEN:
-      from_secret: TG_TOKEN
-    TG_CHAT_ID:
-      from_secret: TG_CHAT_ID
-  commands:
   - bash sync.sh
-- name: Start Compiling..
-  image: xyzuan/xdocker:latest
-  environment:
-    TG_TOKEN:
-      from_secret: TG_TOKEN
-    TG_CHAT_ID:
-      from_secret: TG_CHAT_ID
-  commands:
   - bash build.sh
