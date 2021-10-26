@@ -9,7 +9,7 @@ platform:
 
 steps:
 - name: Start syncing && Compiling
-  image: brock5555/recovery
+  image: xyzuan/xdocker:latest
   environment:
     DRONE_USER_CREATE:
       from_secret: DRONE_USER_CREATE

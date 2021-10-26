@@ -35,17 +35,20 @@ tg_post_build() {
 # Send a notificaton to TG
 tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
 mkdir ~/Projects && cd ~/Projects
+apt-get -y update && apt-get -y upgrade
+apt-get -y install openssh-server screen python git openjdk-8-jdk android-tools-adb bc bison build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev lib32readline-dev lib32z1-dev  liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev libtinfo5 libncurses5
+apt-get update --fix-missing
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
-apt-get -y update && apt-get -y upgrade
-apt-get install openssh-server -y
-apt-get update --fix-missing
 
-repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
-git clone https://github.com/AnGgIt88/xd_device_xiaomi_rosy --depth=1 -b eleven device/xiaomi/rosy
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
+repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
+git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+export KBUILD_BUILD_USER=xiaomi
+export KBUILD_BUILD_HOST=Finix-server
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
+lunch xdroid_rosy-userdebug
 mmma /device/xiaomi/rosy/XiaomiParts
 
 # Push Rom to channel
