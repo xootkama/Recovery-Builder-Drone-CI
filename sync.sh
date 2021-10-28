@@ -40,4 +40,4 @@ git config --global user.name AnGgIt88
 
 repo init --depth=1 -u https://github.com/ArcaneOS/Arcane_manifest -b R
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync
