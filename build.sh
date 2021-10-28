@@ -34,6 +34,7 @@ tg_post_build() {
 
 # Send a notificaton to TG
 tg_post_msg "<b>Recovery Compilation Started...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
+apt-get -y update && apt-get -y upgrade
 apt-get install openssh-server -y
 apt-get update --fix-missing
 mkdir ~/ofox && cd ~/ofox
