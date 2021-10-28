@@ -9,7 +9,7 @@ platform:
 
 steps:
 - name: Ndase Mumet
-  image: xyzuan/xdocker:latest
+  image: brock5555/recovery
   environment:
     TG_TOKEN:
       from_secret: TG_TOKEN

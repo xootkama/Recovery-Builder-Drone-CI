@@ -38,6 +38,6 @@ mkdir ~/Projects && cd ~/Projects
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 
-repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
-git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo init --depth=1 -u https://github.com/ArcaneOS/Arcane_manifest -b R
+git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)

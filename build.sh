@@ -33,12 +33,12 @@ tg_post_build() {
 }
 
 cd ~/Projects
-export KBUILD_BUILD_USER=xiaomi
-export KBUILD_BUILD_HOST=Finix-server
+source build/envsetup.sh
+lunch aosp_rosy-userdebug
+export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-. build/envsetup.sh
-lunch xdroid_rosy-userdebug
-make xd
+export LOCALVERSION=-ArcaneOS
+mmma /device/xiaomi/rosy/XiaomiParts
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts
