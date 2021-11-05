@@ -33,12 +33,11 @@ tg_post_build() {
 }
 
 cd ~/Projects
-source build/envsetup.sh
-lunch aosp_rosy-userdebug
+. build/envsetup.sh
+lunch derp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export LOCALVERSION=-ArcaneOS
-mmma /device/xiaomi/rosy/XiaomiParts
+mka derp
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts

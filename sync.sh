@@ -34,10 +34,10 @@ tg_post_build() {
 
 # Send a notificaton to TG
 tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
-mkdir ~/Projects && cd ~/Projects
+mkdir ~/DerpFest && cd ~/DerpFest
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 
-repo init --depth=1 -u https://github.com/ArcaneOS/Arcane_manifest -b R
-git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .repo/local_manifests
+repo init --depth=1 -u git://github.com/DerpFest-11/manifest.git -b 11
+git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b derp-11 .repo/local_manifests
 repo sync
