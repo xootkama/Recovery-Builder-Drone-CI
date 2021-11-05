@@ -32,7 +32,7 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-cd ~/Projects
+cd ~/DerpFest
 . build/envsetup.sh
 lunch derp_rosy-userdebug
 export TZ=Asia/Jakarta
