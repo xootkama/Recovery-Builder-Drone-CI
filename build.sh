@@ -34,10 +34,10 @@ tg_post_build() {
 
 cd ~/DerpFest
 . build/envsetup.sh
-lunch derp_rosy-userdebug
+lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-mka derp
+mka bacon
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts

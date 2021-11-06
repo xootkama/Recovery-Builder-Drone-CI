@@ -38,6 +38,6 @@ mkdir ~/DerpFest && cd ~/DerpFest
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 
-repo init --depth=1 -u git://github.com/DerpFest-11/manifest.git -b 11
-git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b derpfest-eleven .repo/local_manifests
+repo init --depth=1 -u https://github.com/Project-Elixir/manifest -b snow
+git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b twelve .repo/local_manifests
 repo sync
