@@ -32,12 +32,12 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-cd ~/DerpFest
+cd ~/AospExtended
 . build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-mka bacon
+m aex
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts
