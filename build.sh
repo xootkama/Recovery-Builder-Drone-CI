@@ -33,10 +33,9 @@ tg_post_build() {
 }
 
 cd ~/AospExtended
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
-export ALLOW_MISSING_DEPENDENCIES=true
 mmma /device/xiaomi/rosy/XiaomiParts
 
 # Push Rom to channel
