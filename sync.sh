@@ -40,4 +40,4 @@ git config --global user.name AnGgIt88
 
 repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b Aex-11 .repo/local_manifests
-repo sync
+repo sync -j$(nproc --all)
