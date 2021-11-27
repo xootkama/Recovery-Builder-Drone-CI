@@ -32,8 +32,7 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-# Send a notificaton to TG
-tg_post_msg "<b>Test Building XiaomiParts Apps...</b>%0A<b>DATE : </b><code>$DATE</code>%0A"
+
 mkdir ~/AospExtended && cd ~/AospExtended
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
