@@ -32,9 +32,9 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-cd ~/AospExtended
+cd ~/xdroid-CAF
 source build/envsetup.sh
-lunch aosp_rosy-userdebug
+lunch xdroid_rosy-userdebug
 export TZ=Asia/Jakarta
 mmma /device/xiaomi/rosy/XiaomiParts
 
