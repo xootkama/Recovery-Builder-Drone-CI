@@ -1,14 +1,14 @@
 ---
 kind: pipeline
 type: docker
-name: linux-amd64
+name: Test Rom building
 
 platform:
   arch: amd64
   os: linux
 
 steps:
-- name: Ndase Mumet
+- name: Setup update.
   image: brock5555/recovery
   environment:
     TG_TOKEN:
@@ -17,5 +17,21 @@ steps:
       from_secret: TG_CHAT_ID
   commands:
   - bash setup.sh
+- name: Sync source.
+  image: brock5555/recovery
+  environment:
+    TG_TOKEN:
+      from_secret: TG_TOKEN
+    TG_CHAT_ID:
+      from_secret: TG_CHAT_ID
+  commands:
   - bash sync.sh
+- name: Building started.
+  image: brock5555/recovery
+  environment:
+    TG_TOKEN:
+      from_secret: TG_TOKEN
+    TG_CHAT_ID:
+      from_secret: TG_CHAT_ID
+  commands:
   - bash build.sh
