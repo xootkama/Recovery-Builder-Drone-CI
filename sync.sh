@@ -32,8 +32,6 @@ tg_post_build() {
 	-F caption="$3"
 }
 
-
-rm -rf *
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 mkdir ~/xdroid-CAF && cd ~/xdroid-CAF
