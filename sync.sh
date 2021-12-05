@@ -39,6 +39,6 @@ git config --global user.name AnGgIt88
 mkdir ~/xdroid-CAF && cd ~/xdroid-CAF
 rm -rf .repo/local_manifests
 
-repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_9.0
+repo init --depth=1 -u https://github.com/AnGgIt88/xd_manifest -b eleven
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j48
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j12
