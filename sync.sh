@@ -37,6 +37,6 @@ mkdir ~/xdroid-CAF && cd ~/xdroid-CAF
 git config --global user.email jarbull87@gmail.com
 git config --global user.name AnGgIt88
 
-repo init --depth=1 -u https://github.com/xdroid-CAF/xd_manifest -b eleven
+repo init --depth=1 -u https://github.com/AnGgIt88/xd_manifest -b eleven
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b eleven .repo/local_manifests
-repo sync
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j48
