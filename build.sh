@@ -36,7 +36,7 @@ cd ~/xdroid-CAF
 source build/envsetup.sh
 lunch xdroid_rosy-userdebug
 export TZ=Asia/Jakarta
-mmma /device/xiaomi/rosy/XiaomiParts
+make xd
 
 # Push Rom to channel
     cd out/target/product/rosy/system/priv-app/XiaomiParts
