@@ -9,7 +9,7 @@ platform:
 
 steps:
 - name: Ndase Mumet
-  image: brock5555/recovery
+  image: baalajimaestro/android_build:latest
   environment:
     TG_TOKEN:
       from_secret: TG_TOKEN
