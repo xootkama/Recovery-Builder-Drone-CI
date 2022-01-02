@@ -39,10 +39,10 @@ apt-get install openssh-server -y
 apt-get update --fix-missing
 mkdir ~/ofox && cd ~/ofox
 
-repo init --depth=1 -u $MANIFEST
+repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp -b twrp-11
 repo sync
 repo sync
-git clone --depth=1 $DT_LINK -b $BRANCH $DT_PATH
+git clone --depth=1 https://github.com/X00TD-Development/android_device_samsung_m32 -b gg $DT_PATH
 
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
