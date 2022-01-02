@@ -47,8 +47,8 @@ git clone --depth=1 https://github.com/X00TD-Development/android_device_samsung_
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 echo " source build/envsetup.sh done"
-lunch omni_${DEVICE}-eng || abort " lunch failed with exit status $?"
-echo " lunch omni_${DEVICE}-eng done"
+lunch omni_m32-eng || abort " lunch failed with exit status $?"
+echo " lunch omni_m32-eng done"
 mka recoveryimage || abort " mka failed with exit status $?"
 echo " mka recoveryimage done"
 
