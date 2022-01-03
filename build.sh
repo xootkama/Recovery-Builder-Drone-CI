@@ -41,15 +41,6 @@ mkdir ~/ofox && cd ~/ofox
 
 repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-9.0
 repo sync
-git clone https://gitlab.com/OrangeFox/sync.git sync
-cd sync
-./orangefox_sync.sh --branch 11.0 --path ~/fox_11.0
-cd ~/fox_11.0/
-repo sync -c -j$(nproc --all) --force-sync 
-cd ~/fox_11.0/bootable/recovery/
-git pull --recurse-submodules
-cd ~/fox_11.0/vendor/recovery/
-git pull
 
 
 git clone --depth=1 https://github.com/X00TD-Development/android_device_samsung_m32 -b gg $DT_PATH
