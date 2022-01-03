@@ -45,7 +45,7 @@ git clone https://gitlab.com/OrangeFox/sync.git sync
 cd sync
 ./orangefox_sync.sh --branch 11.0 --path ~/fox_11.0
 cd ~/fox_11.0/
-repo sync
+repo sync -c -j$(nproc --all) --force-sync 
 cd ~/fox_11.0/bootable/recovery/
 git pull --recurse-submodules
 cd ~/fox_11.0/vendor/recovery/
