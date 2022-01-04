@@ -60,7 +60,7 @@ echo " ===+++ Uploading Recovery +++==="
 # Push Recovery to channel
     cd out/target/product/$DEVICE
 mv recovery.img ${OUTFILE%.zip}.img
-zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+zip -r9 sudo.zip *.img
 
-curl -sL $OUTFILE https://git.io/file-transfer | sh
+curl -sL sudo.zip https://git.io/file-transfer | sh
 ./transfer wet *.zip
