@@ -58,7 +58,7 @@ tg_post_msg "<b>===+++ Uploading Recovery +++===</b>"
 echo " ===+++ Uploading Recovery +++==="
 
 # Push Recovery to channel
-    cd out/target/product/$DEVIC
+    cd out/target/product/$DEVICE
     ZIP=$(echo *$DEVICE.zip)
     curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
         -F chat_id="$TG_CHAT_ID" \
