@@ -43,7 +43,7 @@ repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifes
 repo sync
 
 
-git clone --depth=1 https://github.com/X00TD-Development/android_device_samsung_m32 -b gg $DT_PATH
+git clone --depth=1 https://github.com/xootkama/TWRP-m32 -b master $DT_PATH
 
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
@@ -58,7 +58,7 @@ tg_post_msg "<b>===+++ Uploading Recovery +++===</b>"
 echo " ===+++ Uploading Recovery +++==="
 
 # Push Recovery to channel
-    cd out/target/product/$DEVICE
+    cd out/target/product/$DEVIC
     ZIP=$(echo *$DEVICE.zip)
     curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
         -F chat_id="$TG_CHAT_ID" \
