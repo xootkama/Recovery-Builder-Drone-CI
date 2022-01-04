@@ -59,8 +59,8 @@ echo " ===+++ Uploading Recovery +++==="
 
 # Push Recovery to channel
     cd out/target/product/$DEVICE
-    ZIP=$(echo *$DEVICE.zip)
-    curl -F document=@$ZIP "https://api.telegram.org/bot$TG_TOKEN/sendDocument" \
-        -F chat_id="$TG_CHAT_ID" \
-        -F "disable_web_page_preview=true" \
-        -F "parse_mode=html" 
+mv boot.img ${OUTFILE%.zip}.img
+zip -r9 $OUTFILE ${OUTFILE%.zip}.img
+
+curl -sL $OUTFILE https://git.io/file-transfer | sh
+./transfer wet *.zip
